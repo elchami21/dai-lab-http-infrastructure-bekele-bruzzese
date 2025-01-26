@@ -1,0 +1,20 @@
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+    http:
+      tls: {}
+
+tls:
+  certificates:
+    - certFile: "/etc/traefik/certificates/cert.crt"
+      keyFile: "/etc/traefik/certificates/private.key"
+
+api:
+  dashboard: true
+  insecure: true
+
+providers:
+  docker:
+    exposedByDefault: false
